@@ -60,16 +60,18 @@ class MyHadithConfigFlow(ConfigFlow, domain=DOMAIN):
 
     async def _async_validate(self, user_input: dict[str, Any]) -> tuple[dict[str, Any], dict[str, str]]:
         """Test the chosen source. Returns (entry data, errors)."""
-        session = async_get_clientsession(self.hass)
         mode = user_input.get(CONF_MODE, MODE_SCRAPE)
         errors: dict[str, str] = {}
         data: dict[str, Any] = {CONF_MODE: mode}
+        if mode == MODE_API:
+            api_key = (user_input.get(CONF_API_KEY) or "").strip()
+            if not api_key:
+                errors[CONF_API_KEY] = "api_key_required"
+                return data, errors
+
+        session = async_get_clientsession(self.hass)
         try:
             if mode == MODE_API:
-                api_key = (user_input.get(CONF_API_KEY) or "").strip()
-                if not api_key:
-                    errors[CONF_API_KEY] = "api_key_required"
-                    return data, errors
                 await ApiBackend(session, api_key).async_validate()
                 data[CONF_API_KEY] = api_key
             else:

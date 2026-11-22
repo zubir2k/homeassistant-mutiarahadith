@@ -23,8 +23,7 @@ from unittest.mock import patch
 @pytest.fixture(autouse=True)
 def no_aiodns():
     """Mocked sessions still build a connector; keep aiodns from leaving a pycares thread."""
-    with patch("aiohttp.connector.DefaultResolver", aiohttp.ThreadedResolver), \
-         patch("homeassistant.helpers.aiohttp_client.AsyncResolver", aiohttp.ThreadedResolver):
+    with patch("aiohttp.connector.DefaultResolver", aiohttp.ThreadedResolver):
         yield
 
 
