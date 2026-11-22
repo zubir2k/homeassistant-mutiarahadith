@@ -1,0 +1,8 @@
+{
+  "name": "Mutiara Hadith (JAKIM)",
+  "country": "MY",
+  "homeassistant": "2025.2.0",
+  "render_readme": true,
+  "zip_release": true,
+  "filename": "mutiara_hadith.zip"
+}

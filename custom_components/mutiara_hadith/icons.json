@@ -1,0 +1,9 @@
+{
+  "entity": {
+    "sensor": {
+      "mutiara_hadith": {
+        "default": "mdi:book-open-page-variant"
+      }
+    }
+  }
+}

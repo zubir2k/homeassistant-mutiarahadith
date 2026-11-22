@@ -1,0 +1,78 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Mutiara Hadith (JAKIM)",
+        "description": "Pilih sumber data hadith.",
+        "data": {
+          "mode": "Sumber data",
+          "api_key": "Kunci API"
+        },
+        "data_description": {
+          "mode": "Laman web membaca halaman awam MyHadith. API memerlukan kunci daripada JAKIM.",
+          "api_key": "Hanya diperlukan untuk mod API."
+        }
+      },
+      "reconfigure": {
+        "title": "Tukar sumber data",
+        "data": {
+          "mode": "Sumber data",
+          "api_key": "Kunci API"
+        },
+        "data_description": {
+          "mode": "Tukar ke API setelah JAKIM mengeluarkan kunci kepada anda.",
+          "api_key": "Hanya diperlukan untuk mod API."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Kemas kini kunci API",
+        "description": "MyHadith menolak kunci API. Masukkan kunci yang sah.",
+        "data": {
+          "api_key": "Kunci API"
+        },
+        "data_description": {
+          "api_key": "Kunci yang dikeluarkan oleh JAKIM."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Tidak dapat menghubungi MyHadith, atau susun atur laman telah berubah.",
+      "invalid_auth": "Kunci API tidak sah atau tidak aktif.",
+      "api_key_required": "Masukkan kunci API untuk menggunakan mod API."
+    },
+    "abort": {
+      "already_configured": "Mutiara Hadith telah pun ditetapkan.",
+      "single_instance_allowed": "Mutiara Hadith telah pun ditetapkan.",
+      "reconfigure_successful": "Sumber data dikemas kini.",
+      "reauth_successful": "Kunci API dikemas kini."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_hours": "Selang kemas kini"
+        },
+        "data_description": {
+          "scan_hours": "Kekerapan menyemak Mutiara Hadith baharu, dalam jam."
+        }
+      }
+    }
+  },
+  "selector": {
+    "mode": {
+      "options": {
+        "scrape": "Laman web",
+        "api": "API MyHadith (perlu kunci)"
+      }
+    }
+  },
+  "exceptions": {
+    "invalid_auth": {
+      "message": "Kunci API MyHadith tidak sah atau tidak aktif."
+    },
+    "update_failed": {
+      "message": "Gagal mengemas kini daripada MyHadith: {error}"
+    }
+  }
+}

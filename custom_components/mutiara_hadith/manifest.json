@@ -1,0 +1,22 @@
+{
+  "domain": "mutiara_hadith",
+  "name": "Mutiara Hadith (JAKIM)",
+  "codeowners": [
+    "@zubir2k"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "frontend",
+    "http"
+  ],
+  "documentation": "https://github.com/zubir2k/homeassistant-mutiarahadith",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/zubir2k/homeassistant-mutiarahadith/issues",
+  "loggers": [
+    "custom_components.mutiara_hadith"
+  ],
+  "requirements": [],
+  "single_config_entry": true,
+  "version": "0.4.1"
+}
