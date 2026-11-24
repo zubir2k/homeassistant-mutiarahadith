@@ -3,48 +3,15 @@
     "step": {
       "user": {
         "title": "Mutiara Hadith (JAKIM)",
-        "description": "Choose where hadith data comes from.",
-        "data": {
-          "mode": "Data source",
-          "api_key": "API key"
-        },
-        "data_description": {
-          "mode": "Website reads the public MyHadith pages. API needs a key issued by JAKIM.",
-          "api_key": "Only needed for API mode."
-        }
-      },
-      "reconfigure": {
-        "title": "Change data source",
-        "data": {
-          "mode": "Data source",
-          "api_key": "API key"
-        },
-        "data_description": {
-          "mode": "Switch to API once JAKIM has issued you a key.",
-          "api_key": "Only needed for API mode."
-        }
-      },
-      "reauth_confirm": {
-        "title": "Update API key",
-        "description": "MyHadith rejected the API key. Enter a valid key.",
-        "data": {
-          "api_key": "API key"
-        },
-        "data_description": {
-          "api_key": "The key issued by JAKIM."
-        }
+        "description": "Set up featured Mutiara Hadith from JAKIM (MyHadith)."
       }
     },
     "error": {
-      "cannot_connect": "Could not reach MyHadith, or the page layout has changed.",
-      "invalid_auth": "The API key is invalid or inactive.",
-      "api_key_required": "Enter an API key to use API mode."
+      "cannot_connect": "Could not reach MyHadith, or the page layout has changed."
     },
     "abort": {
       "already_configured": "Mutiara Hadith is already set up.",
-      "single_instance_allowed": "Mutiara Hadith is already set up.",
-      "reconfigure_successful": "Data source updated.",
-      "reauth_successful": "API key updated."
+      "single_instance_allowed": "Mutiara Hadith is already set up."
     }
   },
   "options": {
@@ -59,18 +26,7 @@
       }
     }
   },
-  "selector": {
-    "mode": {
-      "options": {
-        "scrape": "Website",
-        "api": "MyHadith API (key required)"
-      }
-    }
-  },
   "exceptions": {
-    "invalid_auth": {
-      "message": "The MyHadith API key is invalid or inactive."
-    },
     "update_failed": {
       "message": "Could not update from MyHadith: {error}"
     }

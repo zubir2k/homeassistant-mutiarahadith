@@ -9,7 +9,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
-from .client import ApiBackend, Hadith, MyHadithAuthError, MyHadithError, ScrapeBackend
+from .client import Hadith, MyHadithAuthError, MyHadithError, ScrapeBackend
 from .const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
@@ -24,7 +24,7 @@ class MyHadithCoordinator(DataUpdateCoordinator[Hadith]):
         self,
         hass: HomeAssistant,
         entry: ConfigEntry,
-        backend: ScrapeBackend | ApiBackend,
+        backend: ScrapeBackend,
         interval: timedelta,
     ) -> None:
         super().__init__(

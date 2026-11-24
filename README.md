@@ -18,7 +18,7 @@ _May this benefit you, inshaAllah._
 - Bundled dashboard card (**Mutiara Hadith Card**) that automatically registers without manual resource configuration.
 - Database optimization: long text attributes are unrecorded from the recorder database to keep your database lean.
 - Configurable scan/refresh interval (1 to 24 hours, default 6 hours).
-- Complete setup support: UI config flow, options flow, reconfigure flow, and diagnostics with API key redaction.
+- Complete setup support: UI config flow, options flow, and diagnostics.
 
 ## 🎯 Use Cases
 - Display daily featured Mutiara Hadith on your Home Assistant dashboard with elegant Arabic typography (Amiri font).
@@ -47,18 +47,7 @@ _May this benefit you, inshaAllah._
 > If you are unable to use the button above, follow the steps below:
 > 1. Navigate to the Home Assistant Integrations page (**Settings → Devices & Services**)
 > 2. Click the `+ ADD INTEGRATION` button in the lower right-hand corner
-> 3. Search for `Mutiara Hadith (JAKIM)`
-> 4. Select your preferred data source mode (default: `Website`) and press Submit
-
-## 🌐 Data Source
-
-| Mode | How it works | Status |
-|---|---|---|
-| **Website (scrape)** | Reads the MyHadith homepage carousel, then that hadith's page. Only 2 polite requests per refresh. | Default |
-| **MyHadith API** | `GET /api/hadith` with an `X-API-KEY` issued by JAKIM. | Supported (waiting for key) |
-
-> [!NOTE]
-> The official Smart Hadith mobile app is no longer active (its Firebase backend was decommissioned), making the MyHadith website the public authoritative source. Once JAKIM issues you an API key, simply go to **Settings → Devices & Services → Mutiara Hadith → ⋮ → Reconfigure** to switch modes seamlessly.
+> 3. Search for `Mutiara Hadith (JAKIM)` and click Submit
 
 ## 📊 Entities & Attributes
 

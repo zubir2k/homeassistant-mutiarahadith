@@ -13,17 +13,13 @@ from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.typing import ConfigType
 
-from .client import ApiBackend, ScrapeBackend
+from .client import ScrapeBackend
 from .const import (
-    CONF_API_KEY,
-    CONF_MODE,
     CONF_SCAN_HOURS,
     CARD_FILENAME,
     DEFAULT_SCAN_HOURS,
     DOMAIN,
     FRONTEND_URL,
-    MODE_API,
-    MODE_SCRAPE,
     VERSION,
 )
 from .coordinator import MyHadithCoordinator
@@ -45,12 +41,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
 
 async def async_setup_entry(hass: HomeAssistant, entry: MyHadithConfigEntry) -> bool:
     session = async_get_clientsession(hass)
-    mode = entry.data.get(CONF_MODE, MODE_SCRAPE)
-    backend = (
-        ApiBackend(session, entry.data[CONF_API_KEY])
-        if mode == MODE_API
-        else ScrapeBackend(session)
-    )
+    backend = ScrapeBackend(session)
     hours = entry.options.get(CONF_SCAN_HOURS, DEFAULT_SCAN_HOURS)
     coordinator = MyHadithCoordinator(hass, entry, backend, timedelta(hours=hours))
     await coordinator.async_config_entry_first_refresh()
