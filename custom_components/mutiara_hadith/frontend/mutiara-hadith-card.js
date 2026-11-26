@@ -3,7 +3,7 @@
  * Shipped and auto-loaded by the mutiara_hadith integration.
  * Content © JAKIM (MyHadith). Amiri font: SIL Open Font License 1.1.
  */
-const CARD_VERSION = "0.4.1";
+const CARD_VERSION = "0.4.2";
 const BASE = new URL(".", import.meta.url).pathname;
 
 const STAR = (() => {
