@@ -3,7 +3,7 @@
  * Shipped and auto-loaded by the mutiara_hadith integration.
  * Content © JAKIM (MyHadith). Amiri font: SIL Open Font License 1.1.
  */
-const CARD_VERSION = "0.4.4";
+const CARD_VERSION = "0.4.5";
 const BASE = new URL(".", import.meta.url).href;
 
 const STAR = (() => {
@@ -132,6 +132,12 @@ class MutiaraHadithCard extends HTMLElement {
     const st = this._hass.states[this._config.entity];
     const dark = !!this._hass.themes?.darkMode;
 
+    if (this._config.accent && typeof CSS !== "undefined" && CSS.supports && CSS.supports("color", this._config.accent)) {
+      this.style.setProperty("--mh-g", this._config.accent);
+    } else {
+      this.style.removeProperty("--mh-g");
+    }
+
     if (!st) {
       this.shadowRoot.innerHTML = `${this._style(dark)}<ha-card><div class="empty">Entity not found: ${esc(this._config.entity)}</div></ha-card>`;
       return;
@@ -208,9 +214,8 @@ class MutiaraHadithCard extends HTMLElement {
   }
 
   _style(dark) {
-    const g = this._config.accent || (dark ? "#5fc49b" : "#2a7f5f");
     return `<style>
-      :host{--mh-g:${g};--mh-soft:color-mix(in srgb,var(--mh-g) ${dark ? 12 : 9}%,var(--card-background-color,#fff));}
+      :host{--mh-g:${dark ? "#5fc49b" : "#2a7f5f"};--mh-soft:color-mix(in srgb,var(--mh-g) ${dark ? 12 : 9}%,var(--card-background-color,#fff));}
       ha-card{overflow:hidden;color:var(--primary-text-color);}
       .hd{display:flex;align-items:center;gap:10px;padding:16px 16px 4px;}
       .logo{width:24px;height:24px;flex:none;fill:var(--mh-g);}
