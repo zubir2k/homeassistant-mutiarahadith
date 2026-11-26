@@ -2,7 +2,7 @@
 from datetime import timedelta
 
 DOMAIN = "mutiara_hadith"
-VERSION = "0.4.2"
+VERSION = "0.4.3"
 FRONTEND_URL = f"/{DOMAIN}_frontend"
 CARD_FILENAME = "mutiara-hadith-card.js"
 BASE_URL = "https://myhadith.islam.gov.my"
