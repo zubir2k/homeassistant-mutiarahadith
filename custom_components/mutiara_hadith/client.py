@@ -1,9 +1,6 @@
 """Data client for MyHadith (JAKIM).
 
-Two backends share one interface (`async_get_featured`):
-- ScrapeBackend: reads the public website (current default).
-- ApiBackend: placeholder for the key-gated /api/hadith endpoint, to be
-  filled in once JAKIM issues an API key and documents the response.
+ScrapeBackend reads the featured hadith from the public MyHadith website.
 """
 from __future__ import annotations
 
@@ -19,10 +16,6 @@ from .const import BASE_URL, REQUEST_TIMEOUT, USER_AGENT
 
 class MyHadithError(Exception):
     """Generic error talking to MyHadith."""
-
-
-class MyHadithAuthError(MyHadithError):
-    """API key missing or rejected."""
 
 
 @dataclass

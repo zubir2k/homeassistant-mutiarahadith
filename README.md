@@ -92,7 +92,6 @@ show_attribution: true              # show attribution in footer
 ## ⚙️ Options & Configuration
 
 - **Refresh Interval**: Change how frequently Home Assistant checks for a new featured hadith (1 to 24 hours, default: 6 hours) via **Settings → Devices & Services → Mutiara Hadith → Configure**.
-- **Reconfigure / Reauth**: Easily switch to API mode or update your API key via the integration options menu.
 
 ## 🗑️ Removal
 

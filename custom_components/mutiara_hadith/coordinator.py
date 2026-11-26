@@ -6,10 +6,9 @@ from datetime import timedelta
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
-from .client import Hadith, MyHadithAuthError, MyHadithError, ScrapeBackend
+from .client import Hadith, MyHadithError, ScrapeBackend
 from .const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
@@ -39,10 +38,6 @@ class MyHadithCoordinator(DataUpdateCoordinator[Hadith]):
     async def _async_update_data(self) -> Hadith:
         try:
             return await self.backend.async_get_featured()
-        except MyHadithAuthError as err:
-            raise ConfigEntryAuthFailed(
-                translation_domain=DOMAIN, translation_key="invalid_auth"
-            ) from err
         except MyHadithError as err:
             raise UpdateFailed(
                 translation_domain=DOMAIN,
