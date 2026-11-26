@@ -4,7 +4,7 @@
  * Content © JAKIM (MyHadith). Amiri font: SIL Open Font License 1.1.
  */
 const CARD_VERSION = "0.4.3";
-const BASE = new URL(".", import.meta.url).pathname;
+const BASE = new URL(".", import.meta.url).href;
 
 const STAR = (() => {
   const s = (a) => {
