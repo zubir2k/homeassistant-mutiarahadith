@@ -1,6 +1,7 @@
 ![mutiara-hadith](/custom_components/mutiara_hadith/brand/dark_logo.png)
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/zubir2k/homeassistant-mutiarahadith?style=social)](https://github.com/zubir2k/homeassistant-mutiarahadith/stargazers)
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg)](https://github.com/hacs/default)
 [![hacs_badge](https://img.shields.io/badge/HACS-Integration-41BDF5.svg)](https://github.com/hacs/integration)
 ![GitHub all releases](https://img.shields.io/badge/dynamic/json?color=41BDF5&logo=home-assistant&label=Download%20Count&suffix=%20installs&cacheSeconds=15600&url=https://analytics.home-assistant.io/custom_integrations.json&query=$.mutiara_hadith.total)
 [![Buy](https://img.shields.io/badge/Belanja-Coffee-yellow.svg)](https://zubirco.de/buymecoffee)
